@@ -21,27 +21,38 @@
 
 </div>
 
-## 1. Giới thiệu hệ thống
+🌦 Ứng dụng Tra cứu Thời tiết Online (Java RMI)
+📖 Giới thiệu đề tài
 
-Hệ thống **Ứng dụng tra cứu thời tiết trực tuyến** được xây dựng theo mô hình **Client-Server** sử dụng Java nhằm:
+Trong thời đại công nghệ thông tin phát triển mạnh mẽ, nhu cầu nắm bắt thông tin thời tiết nhanh chóng và chính xác là rất cần thiết. Đề tài “Ứng dụng tra cứu thời tiết online sử dụng Java RMI” được xây dựng nhằm:
 
-- Hỗ trợ người dùng tra cứu thông tin thời tiết (nhiệt độ, độ ẩm, tốc độ gió, mô tả thời tiết) theo thành phố
-- Cung cấp dữ liệu thời tiết theo thời gian thực từ API công khai (WeatherAPI.com)
-- Giao diện đồ họa thân thiện với người dùng sử dụng Java Swing
-- Hỗ trợ kết nối đồng thời nhiều client thông qua Thread Pool
+🏫 Minh họa mô hình Client – Server trong môn Lập trình mạng.
+
+🌍 Kết nối và xử lý dữ liệu từ API OpenWeatherMap.
+
+📱 Giúp người dùng nhập tên thành phố và nhanh chóng nhận được thông tin thời tiết.
+
+Ứng dụng vừa mang tính học tập (thực hành RMI, lập trình phân tán), vừa có tính thực tiễn (tra cứu dữ liệu thời tiết thật).
 
 👉 **Điểm nổi bật**:
 - Người dùng có thể nhập tên thành phố và nhận thông tin thời tiết ngay lập tức
 - Hỗ trợ nhiều thành phố trên toàn thế giới, dữ liệu cập nhật theo thời gian thực
 - Giao diện client hiện đại với các thông báo trạng thái rõ ràng
 - Log hoạt động chi tiết giúp theo dõi quá trình giao tiếp
-
-## 🔧 2. Công nghệ & Ngôn ngữ sử dụng
-
-[![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white)](https://www.java.com/)
-[![Swing GUI](https://img.shields.io/badge/Swing_GUI-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://docs.oracle.com/javase/tutorial/uiswing/)
-[![WeatherAPI](https://img.shields.io/badge/WeatherAPI-00A1F1?style=for-the-badge&logo=cloud&logoColor=white)](https://www.weatherapi.com/)
-[![Socket Programming](https://img.shields.io/badge/Socket_Programming-FF6B35?style=for-the-badge&logo=network&logoColor=white)]()
+📌 Giới thiệu dự án
+## 📝 1. Giới thiệu đề tài
+Tên đề tài: Ứng dụng Tra cứu Thời tiết Online
+Ngôn ngữ: Java
+Mô hình: Client – Server (RMI)
+Chức năng chính:
+Người dùng nhập tên thành phố.
+Server gọi API OpenWeatherMap để lấy thông tin.
+Hiển thị kết quả cho Client (console hoặc giao diện Swing).
+⚙️ Yêu cầu môi trường
+☕ Java JDK 8+ (khuyến nghị JDK 11).
+📝 Eclipse IDE hoặc IDE khác (IntelliJ, NetBeans).
+🌍 Kết nối Internet để gọi API thời tiết.
+📦 Thư viện JSON (ví dụ: org.json hoặc Gson).
 
 **Chi tiết công nghệ:**
 - **Java SE 11+**: Ngôn ngữ lập trình chính
@@ -51,68 +62,32 @@ Hệ thống **Ứng dụng tra cứu thời tiết trực tuyến** được x�
 - **JSON Parsing**: Xử lý dữ liệu JSON từ API (custom parser)
 - **Multithreading**: ExecutorService cho xử lý đồng thời
 
-## 🚀 3. Một số hình ảnh
+## 🚀 2. Đăng ký và lấy API
+🔑 Chuẩn bị API Key
+Đăng ký tài khoản tại: OpenWeatherMap (https://www.weatherapi.com/my/ )
+Lấy API Key trong mục API Keys.
+Dán API key vào WeatherServiceImpl.java (thay YOUR_API_KEY).
+## 🚀3 Hướng dẫn chạy
+1️⃣ Khởi động RMI Registry
+rmiregistry
+⚠️ Giữ cửa sổ này mở, đừng tắt.
+2️⃣ Chạy Server
+Run WeatherServiceImpl.java.
+Console hiển thị:
+WeatherService is running...
+3️⃣ Chạy Client
+Run WeatherClient.java.
+Nhập tên thành phố (ví dụ: Hanoi).
+Nhận kết quả thời tiết.
 
-### Giao diện chính của Client
-![Client Interface](docs/client-interface.png)
+## ✉️ 3. Liên hệ
 
-### Kết quả tra cứu thời tiết
-![Weather Result](docs/weather-result.png)
+**Tác giả**: Nguyễn Thế Vinh
 
-### Server Console Log
-![Server Console](docs/server-console.png)
-
-## 📝 4. Các bước cài đặt
-
-### Yêu cầu hệ thống:
-- Java Development Kit (JDK) 11 trở lên
-- IDE: Eclipse, IntelliJ IDEA, hoặc VS Code
-- Kết nối internet (để truy cập WeatherAPI)
-
-### Cài đặt và chạy:
-
-1. **Cấu hình API Key** (tùy chọn):
-   - Đăng ký tài khoản tại [WeatherAPI.com](https://www.weatherapi.com/)
-   - Thay thế API key trong `Server.java`:
-   ```java
-   private static final String API_KEY = "YOUR_API_KEY_HERE";
-   ```
-
-2. **Biên dịch dự án**:
-   ```bash
-   javac -d bin src/WeatherApp/*.java
-   ```
-
-3. **Chạy ứng dụng**:
-   ```bash
-   # Chạy Server trước
-   java -cp bin WeatherApp.Server
-   
-   # Sau đó chạy Client
-   java -cp bin WeatherApp.Client
-   ```
-
-4. **Sử dụng**:
-   - Nhấn "Kết nối" → Nhập tên thành phố → "Tra cứu thời tiết"
-
-### Cấu trúc dự án:
-```
-WeatherApp/
-├── src/WeatherApp/
-│   ├── Client.java           # GUI Client application
-│   ├── Server.java           # Multi-threaded server (chứa mock data)
-│   ├── WeatherProtocol.java  # Protocol definitions
-│   └── module-info.java      # Java module configuration
-└── docs/                     # Documentation and images
-```
-
-## ✉️ 5. Liên hệ
-
-**Tác giả**: Nguyễn Đào Nguyên Giáp 
-
-📧 **Email**: nguyennguyenvh09@gmail.com  
+📧 **Email**: vinhvh010204@gmail.com
 🏫 **Trường**: Đại học Đại Nam - Khoa Công nghệ Thông tin  
 
 
 ---
+
 
