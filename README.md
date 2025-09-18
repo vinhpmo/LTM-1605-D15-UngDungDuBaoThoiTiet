@@ -65,7 +65,9 @@ Hiển thị kết quả cho Client (console hoặc giao diện Swing).
 ## 🚀 2. Đăng ký và lấy API
 🔑 Chuẩn bị API Key
 Đăng ký tài khoản tại: OpenWeatherMap (https://www.weatherapi.com/my/ )
-Lấy API Key trong mục API Keys.
+
+Lấy API Key trong mục API Keys
+.
 Dán API key vào WeatherServiceImpl.java (thay YOUR_API_KEY).
 ## 🚀3 Hướng dẫn chạy
 1️⃣ Khởi động RMI Registry
@@ -86,10 +88,12 @@ Nhận kết quả thời tiết.
 
 📧 **Email**: vinhvh010204@gmail.com
 
-🏫 **Trường**: Đại học Đại Nam - Khoa Công nghệ Thông tin  
+🏫 **Trường**: Đại học Đại Nam 
+- Khoa Công nghệ Thông tin  
 
 
 ---
+
 
 
 
